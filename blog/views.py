@@ -3,7 +3,7 @@ from django.contrib import messages
 from .forms import PeliculaForm
 from blog.models import Compra, Producto, Persona, Marca,ComDes
 
-def pelicula_nueva(request):
+def compra_nueva(request):
     if request.method == "POST":
         formulario = PeliculaForm(request.POST)
         if formulario.is_valid():
@@ -12,7 +12,7 @@ def pelicula_nueva(request):
                 actuacion = ComDes(compra_id = compra_id, producto_id = pelicula.id)
                 actuacion.save()
 
-            messages.add_message(request, messages.SUCCESS, 'Pelicula Guardada Exitosamente')
+            messages.add_message(request, messages.SUCCESS, 'Compra Guardada Exitosamente')
     else:
         formulario = PeliculaForm()
     return render(request, 'productos/Pelicula_editar.html', {'formulario': formulario})

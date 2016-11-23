@@ -5,7 +5,7 @@ urlpatterns = [
 
 
 
-    url (r'^$', views.pelicula_nueva, name='pelicula_nueva'),
+    url (r'^$', views.compra_nueva, name='compra_nueva'),
 
 
 ]
